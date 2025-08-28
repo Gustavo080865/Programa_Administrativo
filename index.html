@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tiempo y Productividad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de Tiempo y Productividad</h1>
+        
+        <div class="task-input">
+            <input type="text" id="taskName" placeholder="Nueva tarea...">
+            <input type="datetime-local" id="taskDueDate">
+            <select id="taskPriority">
+                <option value="high">Alta</option>
+                <option value="medium">Media</option>
+                <option value="low">Baja</option>
+            </select>
+            <button id="addTaskBtn">Añadir Tarea</button>
+        </div>
+
+        <div class="filters">
+            <select id="filterPriority">
+                <option value="all">Todas las Prioridades</option>
+                <option value="high">Alta</option>
+                <option value="medium">Media</option>
+                <option value="low">Baja</option>
+            </select>
+            <input type="text" id="searchTask" placeholder="Buscar tarea...">
+        </div>
+
+        <ul id="taskList">
+            <!-- Las tareas se añadirán aquí dinámicamente -->
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
