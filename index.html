@@ -3,37 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Tiempo y Productividad</title>
+    <title>Gestión de Tiempo y Productividad</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Gestor de Tiempo y Productividad</h1>
-        
-        <div class="task-input">
-            <input type="text" id="taskName" placeholder="Nueva tarea...">
-            <input type="datetime-local" id="taskDueDate">
+        <h1>Gestión de Tiempo y Productividad</h1>
+
+        <div class="task-input-section">
+            <h2>Agregar Nueva Tarea</h2>
+            <input type="text" id="taskInput" placeholder="Descripción de la tarea">
+            <input type="datetime-local" id="taskDeadline">
             <select id="taskPriority">
-                <option value="high">Alta</option>
-                <option value="medium">Media</option>
-                <option value="low">Baja</option>
+                <option value="alta">Alta</option>
+                <option value="media" selected>Media</option>
+                <option value="baja">Baja</option>
             </select>
-            <button id="addTaskBtn">Añadir Tarea</button>
+            <button id="addTaskButton">Agregar Tarea</button>
         </div>
 
-        <div class="filters">
-            <select id="filterPriority">
-                <option value="all">Todas las Prioridades</option>
-                <option value="high">Alta</option>
-                <option value="medium">Media</option>
-                <option value="low">Baja</option>
-            </select>
-            <input type="text" id="searchTask" placeholder="Buscar tarea...">
+        <div class="task-list-section">
+            <h2>Mis Tareas</h2>
+            <div class="filters">
+                <label for="filterPriority">Filtrar por Prioridad:</label>
+                <select id="filterPriority">
+                    <option value="todas">Todas</option>
+                    <option value="alta">Alta</option>
+                    <option value="media">Media</option>
+                    <option value="baja">Baja</option>
+                </select>
+                <label for="sortOrder">Ordenar por:</label>
+                <select id="sortOrder">
+                    <option value="deadlineAsc">Fecha Límite (Asc.)</option>
+                    <option value="deadlineDesc">Fecha Límite (Desc.)</option>
+                    <option value="priorityAsc">Prioridad (Asc.)</option>
+                    <option value="priorityDesc">Prioridad (Desc.)</option>
+                </select>
+            </div>
+            <ul id="taskList">
+                <!-- Las tareas se cargarán aquí dinámicamente -->
+            </ul>
         </div>
 
-        <ul id="taskList">
-            <!-- Las tareas se añadirán aquí dinámicamente -->
-        </ul>
+        <div class="productivity-report-section">
+            <h2>Informe de Productividad</h2>
+            <p>Tareas Completadas: <span id="completedTasksCount">0</span></p>
+            <p>Tareas Pendientes: <span id="pendingTasksCount">0</span></p>
+            <h3>Historial de Tareas Completadas</h3>
+            <ul id="completedTasksHistory">
+                <!-- El historial de tareas completadas se cargará aquí -->
+            </ul>
+        </div>
     </div>
 
     <script src="script.js"></script>
